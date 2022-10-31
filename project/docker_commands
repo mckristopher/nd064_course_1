@@ -1,11 +1,43 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run techtrends -p 7111:3111
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker ps
+docker logs 2a752537dee7
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+
+
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.17.0.4:3111/ (Press CTRL+C to quit)
+172.17.0.1 - - [31/Oct/2022 09:34:06] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [31/Oct/2022 09:34:06] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-10-31 09:34:10,878] INFO in app: Article Another post on another day retrieved
+172.17.0.1 - - [31/Oct/2022 09:34:10] "GET /8 HTTP/1.1" 200 -
+172.17.0.1 - - [31/Oct/2022 09:34:10] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [31/Oct/2022 09:36:30] "GET /create HTTP/1.1" 200 -
+172.17.0.1 - - [31/Oct/2022 09:36:30] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-10-31 09:36:45,922] INFO in app: New Article Created : Adding a new post
+172.17.0.1 - - [31/Oct/2022 09:36:45] "POST /create HTTP/1.1" 302 -
+172.17.0.1 - - [31/Oct/2022 09:36:45] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [31/Oct/2022 09:36:45] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-10-31 09:37:25,680] INFO in app: Article Adding a new post retrieved
+172.17.0.1 - - [31/Oct/2022 09:37:25] "GET /10 HTTP/1.1" 200 -
+172.17.0.1 - - [31/Oct/2022 09:37:25] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-10-31 09:37:41,614] INFO in app: About Us page viewed
+172.17.0.1 - - [31/Oct/2022 09:37:41] "GET /about HTTP/1.1" 200 -
+172.17.0.1 - - [31/Oct/2022 09:37:41] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [31/Oct/2022 09:37:48] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [31/Oct/2022 09:37:48] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-10-31 09:37:54,877] INFO in app: Attempt to Access Invalid Article: 46
+172.17.0.1 - - [31/Oct/2022 09:37:54] "GET /46 HTTP/1.1" 404 -
+172.17.0.1 - - [31/Oct/2022 09:37:54] "GET /static/css/main.css HTTP/1.1" 304 -
