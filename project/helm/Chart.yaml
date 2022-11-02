@@ -1,0 +1,9 @@
+apiVersion: v1
+name: techtrends
+description: Configurations for TechTrends app deployment
+keywords:
+- techtrends 
+version: 1.0.0
+maintainers:
+- name: mckristopher 
+  email: mckristopher@gmail.com 
