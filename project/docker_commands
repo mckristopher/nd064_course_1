@@ -19,25 +19,20 @@ docker logs 2a752537dee7
  * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://172.17.0.4:3111/ (Press CTRL+C to quit)
-172.17.0.1 - - [31/Oct/2022 09:34:06] "GET / HTTP/1.1" 200 -
-172.17.0.1 - - [31/Oct/2022 09:34:06] "GET /static/css/main.css HTTP/1.1" 304 -
-[2022-10-31 09:34:10,878] INFO in app: Article Another post on another day retrieved
-172.17.0.1 - - [31/Oct/2022 09:34:10] "GET /8 HTTP/1.1" 200 -
-172.17.0.1 - - [31/Oct/2022 09:34:10] "GET /static/css/main.css HTTP/1.1" 304 -
-172.17.0.1 - - [31/Oct/2022 09:36:30] "GET /create HTTP/1.1" 200 -
-172.17.0.1 - - [31/Oct/2022 09:36:30] "GET /static/css/main.css HTTP/1.1" 304 -
-[2022-10-31 09:36:45,922] INFO in app: New Article Created : Adding a new post
-172.17.0.1 - - [31/Oct/2022 09:36:45] "POST /create HTTP/1.1" 302 -
-172.17.0.1 - - [31/Oct/2022 09:36:45] "GET / HTTP/1.1" 200 -
-172.17.0.1 - - [31/Oct/2022 09:36:45] "GET /static/css/main.css HTTP/1.1" 304 -
-[2022-10-31 09:37:25,680] INFO in app: Article Adding a new post retrieved
-172.17.0.1 - - [31/Oct/2022 09:37:25] "GET /10 HTTP/1.1" 200 -
-172.17.0.1 - - [31/Oct/2022 09:37:25] "GET /static/css/main.css HTTP/1.1" 304 -
-[2022-10-31 09:37:41,614] INFO in app: About Us page viewed
-172.17.0.1 - - [31/Oct/2022 09:37:41] "GET /about HTTP/1.1" 200 -
-172.17.0.1 - - [31/Oct/2022 09:37:41] "GET /static/css/main.css HTTP/1.1" 304 -
-172.17.0.1 - - [31/Oct/2022 09:37:48] "GET / HTTP/1.1" 200 -
-172.17.0.1 - - [31/Oct/2022 09:37:48] "GET /static/css/main.css HTTP/1.1" 304 -
-[2022-10-31 09:37:54,877] INFO in app: Attempt to Access Invalid Article: 46
-172.17.0.1 - - [31/Oct/2022 09:37:54] "GET /46 HTTP/1.1" 404 -
-172.17.0.1 - - [31/Oct/2022 09:37:54] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-03 04:52:39,440 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:52:39] "GET / HTTP/1.1" 200 -
+2022-11-03 04:52:39,528 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:52:39] "GET /static/css/main.css HTTP/1.1" 200 -
+2022-11-03 04:53:02,232 - app - INFO - Article 2020 CNCF Annual Report retrieved
+2022-11-03 04:53:02,241 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:02] "GET /1 HTTP/1.1" 200 -
+2022-11-03 04:53:02,272 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:02] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-03 04:53:06,822 - app - INFO - About Us page viewed
+2022-11-03 04:53:06,825 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:06] "GET /about HTTP/1.1" 200 -
+2022-11-03 04:53:06,859 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:06] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-03 04:53:09,864 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:09] "GET /create HTTP/1.1" 200 -
+2022-11-03 04:53:09,908 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:09] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-03 04:53:27,152 - app - INFO - New Article Created : New Day New Post
+2022-11-03 04:53:27,154 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:27] "POST /create HTTP/1.1" 302 -
+2022-11-03 04:53:27,163 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:27] "GET / HTTP/1.1" 200 -
+2022-11-03 04:53:27,200 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:53:27] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-03 04:54:36,453 - app - INFO - Attempt to Access Invalid Article: 34
+2022-11-03 04:54:36,459 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:54:36] "GET /34 HTTP/1.1" 404 -
+2022-11-03 04:54:36,490 - werkzeug - INFO - 172.17.0.1 - - [03/Nov/2022 04:54:36] "GET /static/css/main.css HTTP/1.1" 304 -

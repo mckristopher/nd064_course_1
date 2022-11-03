@@ -1,5 +1,6 @@
 import sqlite3
 import logging
+import sys
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash, make_response, session
 from werkzeug.exceptions import abort
@@ -22,7 +23,18 @@ def get_post(post_id):
 # Define the Flask application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
-app.logger.setLevel(logging.DEBUG)
+
+# set logger to handle STDOUT and STDERR 
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stderr_handler =  logging.StreamHandler()
+stderr_handler.setLevel(logging.WARNING)
+handlers = [stderr_handler, stdout_handler]
+# format output
+format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+formatter = logging.Formatter(format)
+
+logging.basicConfig(format=format, level=logging.DEBUG, handlers=handlers)
 
 def update_conxn_count():
     if (session.get('connect_count')):
