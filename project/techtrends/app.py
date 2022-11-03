@@ -1,7 +1,7 @@
 import sqlite3
 import logging
 
-from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash, make_response
+from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash, make_response, session
 from werkzeug.exceptions import abort
 
 # Function to get a database connection.
@@ -24,6 +24,12 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
 app.logger.setLevel(logging.DEBUG)
 
+def update_conxn_count():
+    if (session.get('connect_count')):
+        session['connect_count'] += 1
+    else:
+        session['connect_count'] = 1
+
 # Define Health page
 @app.route('/healthz')
 def health():
@@ -34,9 +40,10 @@ def health():
 @app.route('/metrics')
 def metrics():
     connection = get_db_connection()
+    update_conxn_count()
     posts = connection.execute('SELECT COUNT(*) FROM posts').fetchone()
     return make_response(jsonify({
-            'db_connection_count': 4,
+            'db_connection_count': session.get('connect_count'),
             'post_count': posts[0]
         }), 200)
 
@@ -44,6 +51,7 @@ def metrics():
 @app.route('/')
 def index():
     connection = get_db_connection()
+    update_conxn_count()
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
     return render_template('index.html', posts=posts)
@@ -53,6 +61,7 @@ def index():
 @app.route('/<int:post_id>')
 def post(post_id):
     post = get_post(post_id)
+    update_conxn_count()
     if post is None:
         app.logger.info('Attempt to Access Invalid Article: %s', post_id)
         return render_template('404.html'), 404
@@ -77,6 +86,7 @@ def create():
             flash('Title is required!')
         else:
             connection = get_db_connection()
+            update_conxn_count()
             connection.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
                          (title, content))
             connection.commit()
